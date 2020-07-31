@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Farmer's business</title>
+    <script src="farmer.js"></script>
+</head>
+<body>
+        <div class="" id="calendar">
+            <div id="calendar-inner">
+                <h3 id="calendarH">Day</h3>
+                <span id="calendarDay">1</span>
+                <p id="calendarWeekDay">Monday</p>
+            </div>
+        </div>
+        <div class="collect" id="collect-1">Collect</div>
+        <div class="collect" id="collect-2">Collect</div>
+        <div class="collect" id="collect-3">Collect</div>
+    <div class="" id="McDonaldSpeaking">
+        <div id="FirstSpeach">
+            <p>Hello and welcome to your farm. I'm McDonald your farmer. You trust me as your brother and I will never let you down. <br><br>
+            We keep your trees in secret because they are magic trees. Every tree is giving you 50 apples a day. But remember that there is a market twice a week.
+            There we can sell our apples and get some money and pay our bills and of course my wages. <br><br>
+            So lets get started.
+            <span class="nextBtn" id="next-1">Next</span>
+            </p>
+        </div>
+        <div id="SecondSpeach">
+            <p>Hurry up. Click on the trees to start producing apples. Every tree will give you 50 apples for every minute. Than you need to collect the apples and store them until the market opens. 
+                Than sell the apples and keep going untill you make enought money to buy a land. <br><br>
+                In the meantime I will clean the barn and make sure that all the apples are stored good and ready for the market. 
+            <span class="nextBtn" id="next-2">Close</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-inner">
+            <img id="logo-header" src="images/logo.png" alt="">
+        </div>
+    </div>
+    <div class="dashboard">
+        <div class="controls-img">
+            <div id="controls">
+                <h2>Inventory</h2>
+                <div id="appleInStock"><img src="images/apple.png" alt="apple"><p><span id="applesInKg">0 kg</span></p></div>
+                <div id="wallet"><img src="images/coin.png" alt="coin"><p>£<span id="coinsTotal">1200</span></p></div>
+                <div id="marketClock"><span id="clockMinutes">3</span>:<span id="clockSeconds">00</span></div>
+                <div id="market"><img id="marketIcon" src="images/market.png" alt=""><h3>Market</h3></div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="game">
+        <div class="loader" id="loader-1"><div class="loader-scale" id="loader-1-scale"></div></div>
+        <div class="loader" id="loader-2"><div class="loader-scale" id="loader-2-scale"></div></div>
+        <div class="loader" id="loader-3"><div class="loader-scale" id="loader-3-scale"></div></div>
+        <div class="tree-wrapper"><img id="treeN1" src="images/appleTree.png" alt=""></div>
+        <div class="tree-wrapper"><img id="treeN2" src="images/appleTree.png" alt=""></div>
+        <div class="tree-wrapper"><img id="treeN3" src="images/appleTree.png" alt=""></div>
+    </div>
+    <div class="right-empty">1</div>
+    <div class="footer">1</div>
+    <div id="start-blurred">
+        <div class="start">
+            <img id="logo-start" src="images/logo.png" alt="">
+            <div id="intro" class="introductionToTheGame">
+                <h2>Introduction</h2>
+                <p>Here you are. A young farmer from Great Britain. You have a small land with just three trees, but those trees are not normal.
+                They are a magic tree. Every tree is giving you 50 apples every day and when the market is open every week you can sell them and get some money. 
+                <br>
+                You have more magic beans and you can have more trees but you do not have land, so save money until you are ready to buy bigger land. 
+                <br><br>
+                <span class="nextBtn" id="startGame">Start</span>
+            </p>
+            </div>
+            <button id="startBtn">Get Started</button>
+        </div>
+    </div>
+    <div id="market-blurred">
+        <div class="market">
+            <img id="logo-market" src="images/logo.png" alt="">
+            <div id="closeMarket">&times;</div>
+            <div id="GustavSpeach">
+                <div id="GustavGreating">
+                    <p >
+                        Hello fella.<br><br>
+                        What a lovely day to do business, isn't it?<br>
+                        I will buy your apples today on £<span id="priceForApples">2.50</span> per kilo. <br>
+                        What you saying?<br><br>
+                        <span id="agreed">Agree</span><span id="declined">Decline</span>
+                    </p>
+                </div>
+                <div id="GustavHappy">
+                    <p>
+                        I love to do business with you. <br>
+                        Here are your £ <span id="moneyFromGustav">55</span> <br><br>
+                        Go and produce more apples and I will buy them again. But don't forget that the price is changing that's the business! <br><br>
+                        <span class="close" id="closeBtnAccept">Close</span>
+                    </p>
+                </div>
+                <div id="GustavUnhappy">
+                    <p>
+                        I know some times the price is not fair fella, but what I can do? This is the market it's changing every day. <br>
+                        Come back later maybe I can give you a better price. <br>
+                        See you later... <br><br>
+                        <span class="close" id="closeBtnDeclined">Close</span>
+                        
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div id="animation-wrapper">
+        <!-- Clouds left side -->
+        <img id="cloud-1" src="images/clouds/cloud-1.png" alt="">
+        <img id="cloud-2" src="images/clouds/cloud-2.png" alt="">
+        <img id="cloud-3" src="images/clouds/cloud-3.png" alt="">
+        <img id="cloud-4" src="images/clouds/cloud-4.png" alt="">
+        <img id="cloud-5" src="images/clouds/cloud-1.png" alt="">
+        <img id="cloud-6" src="images/clouds/cloud-2.png" alt="">
+        <img id="cloud-7" src="images/clouds/cloud-3.png" alt="">
+        <img id="cloud-8" src="images/clouds/cloud-4.png" alt="">
+        <!-- Clouds righ side -->
+        <img id="cloud-9" src="images/clouds/cloud-1.png" alt="">
+        <img id="cloud-10" src="images/clouds/cloud-2.png" alt="">
+        <img id="cloud-11" src="images/clouds/cloud-3.png" alt="">
+        <img id="cloud-12" src="images/clouds/cloud-4.png" alt="">
+        <img id="cloud-13" src="images/clouds/cloud-1.png" alt="">
+        <img id="cloud-14" src="images/clouds/cloud-2.png" alt="">
+        <img id="cloud-15" src="images/clouds/cloud-3.png" alt="">
+        <img id="cloud-16" src="images/clouds/cloud-4.png" alt="">
+        <img id="cloud-17" src="images/clouds/cloud-1.png" alt="">
+        <img id="cloud-18" src="images/clouds/cloud-1.png" alt="">
+
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+
+</html>

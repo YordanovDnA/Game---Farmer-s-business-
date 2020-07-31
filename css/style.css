@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital@1&display=swap');
+@import url("cloudAnimation.css");
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    background-color: #94A60A;
+    background-image: url("../images/farmer.jpg");
+    background-size: cover;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+#calendar {
+	display: block;
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	top: 77px;
+    left: 7%;
+    background-image: url("../images/calendar.png");
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    transition: 1s;
+    opacity: 1;
+}
+
+#calendarH {
+    margin-top: 10px;
+    margin-bottom: 8px;
+}
+
+#calendarDay{
+    font-size: 28px;
+    margin-top: 0px;
+    font-weight: bold;
+}
+
+
+.header{
+    grid-column-end: span 3;
+}
+
+.header-inner {
+    display: block;
+    width: 100%;
+    height: 250px;
+    
+}
+
+#logo-header {
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.dashboard{
+    min-height: 500px;
+}
+
+.controls-img {
+	position: relative;
+	top: 25%;
+	left: 20%;
+	max-width: 250px;
+	min-height: 350px;
+	background-image: url("../images/controls.png");
+	background-size: cover;
+}
+
+#controls {
+	position: relative;
+	top: 9px;
+	left: 10px;
+	max-width: 190px;
+	height: 206px;
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+}
+
+#controls > h2 {
+	text-align: center;
+	color: #61CE70;
+	font-family: Florence, cursive;
+	margin-bottom: 10px;
+	font-weight: bold;
+	text-shadow: 1px 1px 1px black;
+	border-bottom: 2px solid black;
+	border-radius: 4px;
+	box-shadow: 1px 1px 3px black;
+}
+
+#appleInStock > img {
+	max-width: 26px;
+	display: inline-block;
+	position: relative;
+	top: 4px;
+}
+
+#appleInStock > p {
+	display: inline;
+	font-size: 24px;
+	margin-left: 5px;
+}
+
+#wallet {
+    margin-top: 36px;
+}
+
+#wallet > img {
+    max-width: 24px;
+	display: inline-block;
+	position: relative;
+	top: 4px;
+}
+
+#wallet > p {
+    display: inline;
+	font-size: 24px;
+	margin-left: 5px;
+}
+
+#marketClock {
+	display: none;
+	opacity: 0;
+	transition: 1s;
+	position: absolute;
+	top: 68%;
+	left: 76%;
+	color: white;
+}
+
+#market {
+	border: 1px solid black;
+    box-shadow: 1px 1px 3px black;
+    text-align: center;
+}
+
+#market:hover {
+    cursor: pointer;
+}
+
+#market:active {
+    box-shadow: none;
+}
+
+#marketIcon{
+        display: block;
+        margin: auto;
+        width: 60px;
+}
+
+#closeMarket {
+	display: block;
+	position: absolute;
+	top: 20px;
+	left: 93%;
+	font-size: 55px;
+	font-weight: bold;
+	transition: 1s;
+}
+
+#closeMarket:hover{
+    transform: rotateZ(180deg);
+    cursor: pointer;
+    color: red;
+}
+
+.game{
+    padding: 30px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+
+
+.game > div > img {
+    height: 280px;
+    display: block;
+    margin-left: 40px;
+    position: relative;
+    top: 56px;
+}
+
+.game > div > img:hover {
+    cursor: pointer;
+    opacity: 0.90;
+}
+
+.loader {
+    width: 200px;
+    height: 10px;
+    border: 1px solid black;
+    margin: 0 auto;
+    border-radius: 20px;
+    position: relative;
+    top: 118px;
+    left: 10px;
+}
+
+.loader-scale {
+    height: 10px;
+    background-color: gold;
+    width: 100%;
+    border-radius: 10px;;
+}
+
+#McDonaldSpeaking, #GustavSpeach{
+    display: none;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: 4s;
+}
+
+#FirstSpeach {
+	max-width: 360px;
+	padding: 10px;
+	background-color: rgba(20, 20, 20, 0.90);
+	color: white;
+	margin-left: auto;
+	position: relative;
+	top: 75px;
+	font-family: 'Noto Sans', sans-serif;
+	text-align: center;
+	opacity: 1;
+	transition: 3s;
+	margin-left: auto;
+	right: 100px;
+}
+
+#SecondSpeach {
+    display: none;
+    max-width: 360px;
+	padding: 10px;
+	background-color: rgba(20, 20, 20, 0.90);
+	color: white;
+	margin-left: auto;
+	position: relative;
+	top: 75px;
+	font-family: 'Noto Sans', sans-serif;
+	text-align: center;
+	opacity: 0;
+	transition: 3s;
+	margin-left: auto;
+	right: 100px;
+}
+
+#start-blurred, #market-blurred{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(20, 20, 20, 0.99);
+    transition: 4s;
+}
+
+#start-blurred {
+    display: block;
+}
+
+#market-blurred {
+    display: none;
+    opacity: 0;
+}
+
+
+.start, .market {
+    display: block;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    height: 80vh;
+    background-color: aliceblue;
+    background-size: cover;
+    background-position: center right;
+}
+
+.start {
+    background-image: url("../images/farmer.jpg");
+}
+
+.market{
+    
+    background-image: url("../images/marketplace.jpg");
+}
+
+#logo-start, #logo-market {
+    display: block;
+    
+    margin-left: auto;
+    margin-right: auto;
+    transition: 6s;
+}
+
+#logo-start {
+    width: 450px;
+}
+
+#logo-market{
+    width: 180px;
+}
+
+#GustavSpeach {
+	display: block;
+	position: absolute;
+	opacity: 1;
+	transition: 4s;
+	z-index: 10;
+	width: 350px;
+	color: white;
+	left: 6%;
+	top: 80px;
+	padding: 10px;
+}
+
+#GustavGreating, #GustavHappy, #GustavUnhappy {
+    background-color: rgba(20, 20, 20, 0.99);
+    transition: 1s;
+}
+
+#GustavHappy, #GustavUnhappy {
+    display: none;
+    opacity: 0;
+}
+
+#GustavSpeach > div > p{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#priceForApples{
+    color: #AABF0B;
+}
+
+#agreed {
+	color: #AABF0B;
+	width: 50px;
+    display: inline-block;
+    transition: 50ms;
+}
+
+#declined {
+	color: #D53C00;
+	width: 50px;
+    float: right;
+    transition: 50ms;
+}
+
+.close {
+    color: #D53C00;
+    width: 50px;
+    transition: 50ms;
+}
+
+.close:hover {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#agreed:hover, #declined:hover{
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#GustavHappy{
+    display: none;
+    opacity: 0;
+    transition: 1s;
+}
+
+#GustavUnhappy{
+    display: none;
+    opacity: 0;
+    transition: 1s;
+}
+
+#startBtn{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 70px;
+    padding: 0px 40px;
+    border-radius: 10px;
+    background-color: #29C7D9;
+    font-family: 'Noto Sans', sans-serif;
+    box-shadow: 2px 2px 5px black;
+    text-shadow: 1px 1px 2px;
+}
+
+#startBtn:hover {
+    cursor: pointer;
+    background-color: #AABF0B;
+    color: white;
+}
+
+#startBtn:active{
+    box-shadow: 1px 1px 1px black;
+}
+
+.introductionToTheGame {
+    display: none;
+    max-width: 360px;
+    padding: 10px;
+    background-color: rgba(20, 20, 20, 0.90) ;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 25%;
+    font-family: 'Noto Sans', sans-serif;
+    text-align: center;
+    opacity: 0;
+    transition: 3s;
+}
+
+.introductionToTheGame > h2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.introductionToTheGame > p {
+    text-align: justify;
+    padding: 10px;
+}
+
+.nextBtn {
+    color: #AABF0B;
+    margin-left: auto;
+    display: block;
+    width: 50px;
+}
+
+.nextBtn:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#loader-1-scale {
+    transition: 2s;
+}
+
+#loader-2-scale {
+    transition: 2s;
+}
+
+#loader-3-scale {
+    transition: 2s;
+}
+
+.collect {
+    display: none;
+    position: absolute;
+    font-size: 20px;
+	color: black;
+	text-shadow: 1px 1px 2px black;
+	background: #61CE70;
+	padding: 6px;
+	border-radius: 5px;
+	border: 1px solid black;
+	box-shadow: 2px 2px 2px black;
+    top: 330px;
+    transition: 2s;
+    opacity: 0;
+}
+
+.collect:hover {
+    cursor: pointer;
+}
+
+.collect:active {
+    box-shadow: none;
+}
+
+#collect-1 {
+	left: 29%;
+	
+}
+
+#collect-2 {
+    left: 48%;
+}
+
+#collect-3 {
+    left: 67%;
+}
+
+.footer {
+    grid-column-end: span 3;
+    min-height: 120px;;
+}
+

@@ -1,0 +1,328 @@
+/* Clouds animation  */
+
+#animation-wrapper {
+    display: none;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: transparent;
+    z-index: 10;
+}
+
+#cloud-1 {
+	position: absolute;
+	display: block;
+	top: 480px;
+    left: -1800px;
+    animation-name: cloud-1;
+    animation-duration: 9s;
+    animation-iteration-count: 1;
+}
+
+#cloud-2 {
+	position: absolute;
+	display: block;
+    top: 476px;
+    left: -1800px;
+    z-index: -1;
+    animation-name: cloud-2;
+    animation-duration: 8s;
+}
+
+#cloud-3 {
+	position: absolute;
+	display: block;
+	top: 461px;
+	left: -1800px;;
+    z-index: -1;
+    animation-name: cloud-3;
+    animation-duration: 7s;
+}
+
+#cloud-4 {
+	position: absolute;
+	display: block;
+	top: 508px;
+	left: -1800px;;
+    z-index: -1;
+    animation-name: cloud-4;
+    animation-duration: 8s;
+}
+
+#cloud-5 {
+	position: absolute;
+	display: block;
+	top: 328px;
+	left: -1800px;;
+    z-index: -2;
+    animation-name: cloud-5;
+    animation-duration: 7s;
+}
+
+#cloud-6 {
+	position: absolute;
+	display: block;
+    top: 323px;
+    left: -1800px;
+    z-index: -3;
+    animation-name: cloud-6;
+    animation-duration: 7s;
+}
+
+#cloud-7 {
+	position: absolute;
+	display: block;
+	top: 328px;
+	left: -1800px;;
+    z-index: -3;
+    animation-name: cloud-7;
+    animation-duration: 8s;
+}
+
+#cloud-8 {
+	position: absolute;
+	display: block;
+	top: 310px;
+	left: -1800px;;
+    z-index: -4;
+    animation-name: cloud-8;
+    animation-duration: 9s;
+}
+
+/*Animations for clouds left side*/
+@keyframes cloud-1 {
+    0% {left: -1800px; display: block}
+    40%{left: 120px;}
+    60%{left: 120px;}
+    100%{left: -1800px; display: none}
+}
+
+@keyframes cloud-2 {
+    0% {left: -1800px; display: block}
+    40%{left: 0px;}
+    60%{left: 0px;}
+    100%{left: -1800px; display: none}
+}
+
+@keyframes cloud-3 {
+    0% {left: -1800px; display: block}
+    40%{left: 322px;}
+    60%{left: 322px;}
+    100%{left: -1800px; display: none}
+}
+
+@keyframes cloud-4 {
+    0% {left: -1800px; display: block}
+    40%{left: 226px;}
+    60%{left: 226px;}
+    100%{left: -1800px; display: none}
+}
+
+@keyframes cloud-5 {
+    0% {left: -1800px; display: block}
+    40%{left: -34px;}
+    60%{left: -34px;}
+    100%{left: -1800px; display: none}
+}
+
+@keyframes cloud-6 {
+    0% {left: -1800px; display: block}
+    40%{left: 0px;}
+    60%{left: 0px;}
+    100%{left: -1800px; display: none}
+}
+
+@keyframes cloud-7 {
+    0% {left: -1800px; display: block}
+    40%{left: 230px;}
+    60%{left: 230px;}
+    100%{left: -1800px; display: none}
+}
+
+@keyframes cloud-8 {
+    0% {left: -1800px; display: block}
+    40%{left: 315px;}
+    60%{left: 315px;}
+    100%{left: -1800px; display: none}
+}
+
+
+/* Clouds right side */
+
+#cloud-9 {
+	position: absolute;
+	display: block;
+	top: 480px;
+	left: -1800px;
+    transform: rotateY(180deg);
+    animation-name: cloud-9;
+    animation-duration: 7s;
+}
+
+#cloud-10 {
+	position: absolute;
+	display: block;
+	top: 511px;
+	z-index: -1;
+	left: -1800px;
+    transform: rotateY(180deg);
+    animation-name: cloud-10;
+    animation-duration: 8s;
+}
+
+#cloud-11 {
+	position: absolute;
+	display: block;
+	top: 461px;
+	left: -1800px;
+	z-index: -1;
+    transform: rotateY(180deg);
+    animation-name: cloud-11;
+    animation-duration: 9s;
+}
+
+#cloud-12 {
+	position: absolute;
+	display: block;
+	top: 508px;
+	left: -1800px;
+	z-index: -1;
+    transform: rotateY(180deg);
+    animation-name: cloud-12;
+    animation-duration: 7s;
+}
+
+#cloud-13 {
+	position: absolute;
+	display: block;
+	top: 328px;
+	left: -1800px;
+    z-index: -2;
+    animation-name: cloud-13;
+    animation-duration: 8s;
+}
+
+#cloud-14 {
+	position: absolute;
+	display: block;
+	top: 394px;
+	left: -1800px;
+    z-index: -3;
+    animation-name: cloud-14;
+    animation-duration: 9s;
+}
+
+#cloud-15 {
+	position: absolute;
+	display: block;
+	top: 328px;
+	left: -1800px;
+	z-index: -4;
+    transform: rotateY(180deg);
+    animation-name: cloud-15;
+    animation-duration: 7s;
+}
+
+#cloud-16 {
+	position: absolute;
+	display: block;
+	top: 352px;
+	left: -1800px;
+	z-index: -4;
+    transform: rotateY(180deg);
+    animation-name: cloud-16;
+    animation-duration: 8s;
+}
+
+#cloud-17 {
+	position: absolute;
+	display: block;
+	top: 365px;
+	left: -1800px;
+    transform: rotateY(180deg);
+    animation-name: cloud-17;
+    animation-duration: 9s;
+	z-index: -2;
+}
+
+#cloud-18 {
+	position: absolute;
+	display: block;
+	top: 480px;
+	left: -1800px;
+    transform: rotateY(180deg);
+    animation-name: cloud-18;
+    animation-duration: 7s;
+}
+
+/*Animations for right clouds*/
+
+@keyframes cloud-9{
+    0%{display: block; left: 2800px}
+    40%{left:738px;}
+    60%{left: 738px;}
+    100%{display: none; left: 2800px}
+}
+
+@keyframes cloud-10{
+    0%{display: block; left: 2800px}
+    40%{left:800px;}
+    60%{left: 800px;}
+    100%{display: none; left: 2800px}
+}
+
+@keyframes cloud-11{
+    0%{display: block; left: 2800px}
+    40%{left:726px;}
+    60%{left: 726px;}
+    100%{display: none; left: 2800px}
+}
+
+@keyframes cloud-12{
+    0%{display: block; left: 2800px}
+    40%{left:1066px;}
+    60%{left: 1066px;}
+    100%{display: none; left: 2800px}
+}
+
+@keyframes cloud-13{
+    0%{display: block; left: 2800px}
+    40%{left:781px;}
+    60%{left: 781px;}
+    100%{display: none; left: 2800px}
+}
+
+@keyframes cloud-14{
+    0%{display: block; left: 2800px}
+    40%{left:600px;}
+    60%{left: 600px;}
+    100%{display: none; left: 2800px}
+}
+
+@keyframes cloud-15{
+    0%{display: block; left: 2800px}
+    40%{left:898px;}
+    60%{left: 898px;}
+    100%{display: none; left: 2800px}
+}
+
+@keyframes cloud-16{
+    0%{display: block; left: 2800px}
+    40%{left:1032px;}
+    60%{left: 1032px;}
+    100%{display: none; left: 2800px}
+}
+
+@keyframes cloud-17{
+    0%{display: block; left: 2800px}
+    40%{left:1121px;}
+    60%{left: 1121px;}
+    100%{display: none; left: 2800px}
+}
+
+@keyframes cloud-18{
+    0%{display: block; left: 2800px}
+    40%{left:1115px;}
+    60%{left: 1115px;}
+    100%{display: none; left: 2800px}
+}
