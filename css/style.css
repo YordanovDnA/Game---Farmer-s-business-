@@ -500,3 +500,38 @@ body {
     min-height: 120px;;
 }
 
+#noResponsive{
+    display: none;
+    position: absolute;
+    background-color: rgba(20, 20, 20, 0.99);
+    height: 100vh;
+    width: 100%;
+}
+
+#noResponciveMsg {
+    position: relative;
+    top:25%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(39, 39, 39, 0.99);
+    border-bottom:  1px solid white;
+    text-align: center;
+    padding: 10px;
+}
+
+#noResponciveMsg > h2 {
+    font-size: 35px;
+    color: #AABF0B;
+}
+
+#noResponciveMsg > p {
+    color: white;
+    font-size: 16px;
+    text-align: justify;
+}
+
+@media screen and (max-width: 1500px){
+    #noResponsive {
+        display: block;
+    }
+}
