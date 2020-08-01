@@ -9,7 +9,7 @@ let startBtn, startGame, calendar, calendarWeekDay, barn, money, applesInKg, coi
  days, displayDay, dayNumber = 1, week = 1, displayDayNumber, game = 0, i = 0, timing, marketBtn, market, closeBtnAccept, closeBtnDeclined, pricePlaceholder, randomApplesPrice, acceptDeal, declinedDeal,
  closeMarket, marketClock, clockTick, clockMinutes, clockSeconds, gustavGreating, gustavHappy, gustavUnhappy,
  clockMinPlaceholder, clockSecPlaceholder, tree1, tree2, tree3,loader1scale, loader2scale, loader3scale, Ls1 ,Ls2, Ls3, intTree1,
- collectTree1, collectTree2, collectTree3;
+ collectTree1, collectTree2, collectTree3, winBlurred, looseBrurred, win;
 
 days = ["Monday", "Thuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 calendar = document.getElementById("calendar");
@@ -34,7 +34,7 @@ loader1scale = document.getElementById("loader-1-scale"); //Scale for tree N1
 loader2scale = document.getElementById("loader-2-scale"); //Scale for tree N2
 loader3scale = document.getElementById("loader-3-scale"); //Scale for tree N3
 Ls1 = 100; Ls2 = 100; Ls3 = 100; moneyTotal = 1200; //for the percentages of the scales
-barn = 0; money = 1200; randomApplesPrice = 0; clockMinutes = 3; clockSeconds = 60;
+barn = 0; money = 1200; randomApplesPrice = 0; clockMinutes = 1; clockSeconds = 60;
 applesInKg = document.getElementById("applesInKg");
 coinsTotal = document.getElementById("coinsTotal");
 marketBtn = document.getElementById("market");
@@ -55,7 +55,29 @@ closeMarket = document.getElementById("closeMarket");
 marketClock = document.getElementById("marketClock");
 clockMinPlaceholder = document.getElementById("clockMinutes");
 clockSecPlaceholder = document.getElementById("clockSeconds");
+winBlurred = document.getElementById("win-blurred");
+looseBrurred = document.getElementById("loose-blurred");
 
+
+function fadeIn(section){
+    section.style.transition = "1s";
+    section.style.opacity = "0";
+    section.style.display = "block";
+    setTimeout(() => {
+        section.style.opacity = "1";
+    }, 100);
+}
+
+function fadeOut(section){
+    section.style.transition = "1s";
+    section.style.opacity = "1";
+    setTimeout(()=>{
+        section.style.opacity = "0";
+    }, 1000)
+    setTimeout(() => {
+        section.style.display = "none";
+    }, 1100);
+}
 
 
 
@@ -178,7 +200,7 @@ function showTheMarket() {
     }
     else{
         clockSeconds = 60;
-        clockMinutes = 3;
+        clockMinutes = 1;
         clockMinPlaceholder.innerHTML = clockMinutes;
         market.style.display = "block";
         setTimeout(() => {
@@ -225,7 +247,7 @@ function hideMarket(){
         marketClock.style.opacity = "0";
         marketClock.style.display = "none";
         clearInterval(clockTick);
-    }, 242000);
+    }, 121000);
 }
 
 
@@ -236,6 +258,14 @@ console.log("Today is: " + days[currentDay]);
 function gameOn(){
 
     if(game == 1 ){
+        
+        //Check for wining
+        win = setInterval(() => {
+            if(moneyTotal > 10000){
+                fadeIn(winBlurred);
+                clearInterval(win);
+            }
+        }, 1000);
 
         //Market open
         marketBtn.addEventListener("click", showTheMarket);
@@ -251,7 +281,7 @@ function gameOn(){
         tree1.addEventListener("click", () => {
             console.log("Tree 1 was clicked");
             tree1.style.pointerEvents = "none";
-            intTree1 = setInterval(tree1production, 600);
+            intTree1 = setInterval(tree1production, 100);
             function tree1production() {
                 
                 if(Ls1 >= 1){
@@ -268,7 +298,7 @@ function gameOn(){
                     }, 100);
                     collectTree1.addEventListener("click", collectApples1)
                     function collectApples1(){
-                        barn+= 50;
+                        barn+= 110;
                         applesConvert = barn*0.15;
                         applesInKg.innerHTML = applesConvert + " kg";
                         
@@ -289,7 +319,7 @@ function gameOn(){
         tree2.addEventListener("click", () => {
             console.log("Tree 2 was clicked");
             tree2.style.pointerEvents = "none";
-            intTree2 = setInterval(tree2production, 600);
+            intTree2 = setInterval(tree2production, 100);
             function tree2production() {
 
                 if(Ls2 >= 1){
@@ -306,7 +336,7 @@ function gameOn(){
                     }, 100);
                     collectTree2.addEventListener("click", collectApples2)
                     function collectApples2(){
-                        barn+= 50;
+                        barn+= 110;
                         applesConvert = barn*0.15;
                         applesInKg.innerHTML = applesConvert + " kg";
                         tree2.style.pointerEvents = "auto";
@@ -326,7 +356,7 @@ function gameOn(){
         tree3.addEventListener("click", () => {
             console.log("Tree 3 was clicked");
             tree3.style.pointerEvents = "none";
-            intTree3 = setInterval(tree3production, 600);
+            intTree3 = setInterval(tree3production, 100);
             function tree3production() {
 
                 if(Ls3 >= 1){
@@ -343,7 +373,7 @@ function gameOn(){
                     }, 100);
                     collectTree3.addEventListener("click", collectApples3)
                     function collectApples3(){
-                        barn+= 50;
+                        barn+= 110;
                         applesConvert = barn*0.15;
                         applesInKg.innerHTML = applesConvert + " kg";
                         tree3.style.pointerEvents = "auto";
@@ -364,7 +394,7 @@ function gameOn(){
 
 
         //Interval for the day
-        dayInterval = setInterval(changeDay, 60000);
+        dayInterval = setInterval(changeDay, 150000);
 
         //Execute when the date is changed
         function changeDay(){
@@ -380,6 +410,7 @@ function gameOn(){
                 }, 1000);
                 if(week === 2){
                     gameOver();
+                    fadeIn(looseBrurred);
                 }
 
             }
