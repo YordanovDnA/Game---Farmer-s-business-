@@ -247,7 +247,7 @@ function hideMarket(){
         marketClock.style.opacity = "0";
         marketClock.style.display = "none";
         clearInterval(clockTick);
-    }, 121000);
+    }, 120000);
 }
 
 
@@ -259,13 +259,7 @@ function gameOn(){
 
     if(game == 1 ){
         
-        //Check for wining
-        win = setInterval(() => {
-            if(moneyTotal > 10000){
-                fadeIn(winBlurred);
-                clearInterval(win);
-            }
-        }, 1000);
+      
 
         //Market open
         marketBtn.addEventListener("click", showTheMarket);
@@ -398,7 +392,8 @@ function gameOn(){
 
         //Execute when the date is changed
         function changeDay(){
-            if(currentDay == 6){
+            if(currentDay === 6){
+                
                 dayNumber++;
                 currentDay = 0;
                 week++
@@ -410,10 +405,26 @@ function gameOn(){
                 }, 1000);
                 if(week === 2){
                     gameOver();
-                    fadeIn(looseBrurred);
                 }
+                
 
             }
+
+            else if(currentDay === 5){
+                setTimeout(() => {
+                    alert("Game end in 1 minute. Last chance to sell your apples!")
+                }, 75000);
+                dayNumber++;
+                currentDay++ ;
+                calendar.style.opacity = "0";
+                
+                setTimeout(() => {
+                    calendarWeekDay.innerHTML = days[currentDay];
+                    displayDayNumber.innerHTML = dayNumber;
+                   calendar.style.opacity = "1"; 
+                }, 1000);
+            }
+
             else{
                 dayNumber++;
                 currentDay++ ;
@@ -448,12 +459,19 @@ function gameOn(){
         function gameOver(){
             game = 0;
             if(game == 0){
-                console.log("Game Over - you couldn't save enought money to buy a new land. Try agian.")
-                clearInterval(timing);
-                clearInterval(dayInterval);
-                tree1.style.pointerEvents = "none";
-                tree2.style.pointerEvents = "none";
-                tree3.style.pointerEvents = "none";
+                if(moneyTotal > 10000){
+                    fadeIn(winBlurred);
+                    clearInterval(win);
+                }
+                else{
+                    fadeIn(looseBrurred);
+                    console.log("Game Over - you couldn't save enought money to buy a new land. Try agian.")
+                    clearInterval(timing);
+                    clearInterval(dayInterval);
+                    tree1.style.pointerEvents = "none";
+                    tree2.style.pointerEvents = "none";
+                    tree3.style.pointerEvents = "none";
+                }
             }
             
         }
