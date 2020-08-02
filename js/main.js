@@ -259,6 +259,13 @@ function gameOn(){
 
     if(game == 1 ){
         
+        win = setInterval(() => {
+            if(moneyTotal > 10000){
+                fadeOut(gustavHappy);
+                fadeIn(winBlurred);
+                clearInterval(win);
+            }
+        }, 1000);
       
 
         //Market open
@@ -292,7 +299,7 @@ function gameOn(){
                     }, 100);
                     collectTree1.addEventListener("click", collectApples1)
                     function collectApples1(){
-                        barn+= 110;
+                        barn+= 150;
                         applesConvert = barn*0.15;
                         applesInKg.innerHTML = applesConvert + " kg";
                         
@@ -330,7 +337,7 @@ function gameOn(){
                     }, 100);
                     collectTree2.addEventListener("click", collectApples2)
                     function collectApples2(){
-                        barn+= 110;
+                        barn+= 150;
                         applesConvert = barn*0.15;
                         applesInKg.innerHTML = applesConvert + " kg";
                         tree2.style.pointerEvents = "auto";
@@ -367,7 +374,7 @@ function gameOn(){
                     }, 100);
                     collectTree3.addEventListener("click", collectApples3)
                     function collectApples3(){
-                        barn+= 110;
+                        barn+= 150;
                         applesConvert = barn*0.15;
                         applesInKg.innerHTML = applesConvert + " kg";
                         tree3.style.pointerEvents = "auto";
@@ -459,19 +466,13 @@ function gameOn(){
         function gameOver(){
             game = 0;
             if(game == 0){
-                if(moneyTotal > 10000){
-                    fadeIn(winBlurred);
-                    clearInterval(win);
-                }
-                else{
-                    fadeIn(looseBrurred);
-                    console.log("Game Over - you couldn't save enought money to buy a new land. Try agian.")
-                    clearInterval(timing);
-                    clearInterval(dayInterval);
-                    tree1.style.pointerEvents = "none";
-                    tree2.style.pointerEvents = "none";
-                    tree3.style.pointerEvents = "none";
-                }
+                fadeIn(looseBrurred);
+                console.log("Game Over - you couldn't save enought money to buy a new land. Try agian.")
+                clearInterval(timing);
+                clearInterval(dayInterval);
+                tree1.style.pointerEvents = "none";
+                tree2.style.pointerEvents = "none";
+                tree3.style.pointerEvents = "none";
             }
             
         }
